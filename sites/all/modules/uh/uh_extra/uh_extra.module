@@ -1,0 +1,20 @@
+<?php
+/**
+ * Implements hook_facetapi_url_processors().
+ */
+function uh_extra_facetapi_url_processors() {
+  return array(
+    'standard' => array(
+      'handler' => array(
+        'label' => t('uh_extra URL processor'),
+        'class' => 'FacetApiUhExtra',
+      ),
+    ),
+  );
+}
+
+class FacetApiUhExtra extends FacetapiUrlProcessorStandard {
+  public function setBreadcrumb() {
+    // Keep default behavior.
+  }
+}
